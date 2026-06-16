@@ -1,0 +1,16 @@
+{
+    "problem": "005",
+    "started": {
+        "time": "9:30",
+        "date": "16.06.2026"
+    },
+    "finished": {
+        "time":"10:15",
+        "date": "16.06.2026"
+    },
+    "evalfin": {
+        "time":"11:00",
+        "date": "16.06.2026",
+        "duration": "30min"
+    }
+}
