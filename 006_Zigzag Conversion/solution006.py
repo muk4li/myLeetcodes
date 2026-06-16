@@ -58,7 +58,7 @@ def main():
     print("--- meine Lösung ---")
     print(meineLoesung(legitinput1,input2))
     print("--- optimale Lösung ---")
-    print(optimaleLoesung())
+    print(optimaleLoesung(legitinput1,input2))
 
 if __name__=="__main__":
     main()
