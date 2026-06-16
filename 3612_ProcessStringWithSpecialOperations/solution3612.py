@@ -19,7 +19,7 @@ def meineLoesung(s):
 
 def optimaleLoesung():
     """
-    Meine war schon die besste 100% runtime| 98% memory
+    Meine war schon die beste 100% runtime| 98% memory
     """
     return
 
