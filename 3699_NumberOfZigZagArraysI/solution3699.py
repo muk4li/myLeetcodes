@@ -1,33 +1,67 @@
-def meineLoesung(n,l,r):
-    output=0
+def meineLoesung(n, l, r):
+    MOD = 10**9 + 7
+
     länge = n
-    _range= range(l,r+1)
-    
-    dp =[]
-    direction=[0,1]
+    _range = range(l, r + 1)
 
-    def getdp(startwert,alle,dir):
-        array=[startwert]
+    # dp[i][dir][x] = Anzahl Folgen der Länge i,
+    # die bei Wert x enden und als nächstes Richtung dir brauchen
+    #
+    # dir = 0 bedeutet: nächster Wert muss kleiner sein
+    # dir = 1 bedeutet: nächster Wert muss größer sein
 
-        for index in range(länge-1):
-            for nächsterwert in alle:
-                if dir==1:
-                    if nächsterwert > array[index]:
-                        array.append(nächsterwert)
-                        dir = 0
-                        break
-                if dir==0:
-                    if nächsterwert < array[index]:
-                        array.append(nächsterwert)
-                        dir = 1
-                        break
-        dp.append(array)
+    dp = {}
 
-    for zahl in _range:
-        for richtung in direction:
-            getdp(zahl,_range,richtung)
+    # Start: Folgen der Länge 1
+    for jedeZahl in _range:
+        dp[(1, 0, jedeZahl)] = 1
+        dp[(1, 1, jedeZahl)] = 1
 
-    output = len(dp)
+    # Folgen von Länge 2 bis n aufbauen
+    for aktuelleLänge in range(1, länge):
+        neueDp = {}
+
+        for (alteLänge, richtung, letzteZahl), anzahl in dp.items():
+
+            # Nur Zustände der aktuellen Länge weiterverarbeiten
+            if alteLänge != aktuelleLänge:
+                continue
+
+            for jedeZahl in _range:
+
+                # nächster Wert muss größer sein
+                if richtung == 1 and jedeZahl > letzteZahl:
+                    neueRichtung = 0
+                    key = (aktuelleLänge + 1, neueRichtung, jedeZahl)
+
+                    if key not in neueDp:
+                        neueDp[key] = 0
+
+                    neueDp[key] += anzahl
+                    neueDp[key] %= MOD
+
+                # nächster Wert muss kleiner sein
+                if richtung == 0 and jedeZahl < letzteZahl:
+                    neueRichtung = 1
+                    key = (aktuelleLänge + 1, neueRichtung, jedeZahl)
+
+                    if key not in neueDp:
+                        neueDp[key] = 0
+
+                    neueDp[key] += anzahl
+                    neueDp[key] %= MOD
+
+        dp = neueDp
+
+    if n == 1:
+        return r - l + 1
+
+    output = 0
+
+    for (aktuelleLänge, richtung, letzteZahl), anzahl in dp.items():
+        if aktuelleLänge == n:
+            output += anzahl
+            output %= MOD
 
     return output
 
