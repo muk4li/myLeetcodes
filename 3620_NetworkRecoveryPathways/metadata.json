@@ -1,0 +1,29 @@
+{
+    "problem": "3620",
+    "title": "Network Recovery Pathways",
+    "url": "https://leetcode.com/problems/network-recovery-pathways/",
+    "difficulty": "Hard",
+    "tags": [],
+    "status": "in_progress",
+    "started": {
+        "time": "08:57",
+        "date": "03.07.2026"
+    },
+    "finished": {
+        "time": "00:00",
+        "date": "01.01.2001"
+    },
+    "evalfin": {
+        "time": "99:99",
+        "date": "01.01.2001",
+        "duration": "99"
+    },
+    "complexity_mine": {
+        "time": "O(?)",
+        "space": "O(?)"
+    },
+    "complexity_optimal": {
+        "time": "O(?)",
+        "space": "O(?)"
+    }
+}

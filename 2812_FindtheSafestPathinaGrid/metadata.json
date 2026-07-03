@@ -1,0 +1,29 @@
+{
+    "problem": "2812",
+    "title": "Find the Safest Path in a Grid",
+    "url": "https://leetcode.com/problems/find-the-safest-path-in-a-grid/",
+    "difficulty": "Medium",
+    "tags": [],
+    "status": "in_progress",
+    "started": {
+        "time": "08:59",
+        "date": "03.07.2026"
+    },
+    "finished": {
+        "time": "00:00",
+        "date": "01.01.2001"
+    },
+    "evalfin": {
+        "time": "99:99",
+        "date": "01.01.2001",
+        "duration": "99"
+    },
+    "complexity_mine": {
+        "time": "O(?)",
+        "space": "O(?)"
+    },
+    "complexity_optimal": {
+        "time": "O(?)",
+        "space": "O(?)"
+    }
+}
